@@ -17,6 +17,13 @@ public class OSPlugin extends CordovaPlugin {
             callbackContext.success();
             return true;
         }
+        if ("addInt".equals(action)) {
+            int num1 = args.getInt(0);
+            int num2 = args.getInt(1);
+            int sum = num1 + num2;
+            callbackContext.success(sum);
+            return true;
+        }
         return false;
     }
 
