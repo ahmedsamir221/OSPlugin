@@ -12,5 +12,26 @@
     </config-file>
     <config-file parent="/*" target="AndroidManifest.xml"/>
     <source-file src="src/android/OSPlugin.java" target-dir="src/cordova-os-plugin/OSPlugin"/>
+    <!-- Add MapBox dependency -->
+    <framework src="com.mapbox.maps:android:latest.release" />
+    <config-file target="project/build.gradle" parent="allprojects/repositories">
+      <repository>
+        <maven {
+                url "https://api.mapbox.com/downloads/v2/releases/maven"
+                credentials {
+                    username = "mapbox"
+                    password = "your_mapbox_access_token"
+                }
+            } />
+      </repository>
+    </config-file>
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.INTERNET" />
+      <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+      <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    </config-file>
+    <config-file target="AndroidManifest.xml" parent="application">
+      <activity android:name="com.example.simplemap.SimpleMapActivity" android:exported="true" />
+    </config-file>
   </platform>
 </plugin>

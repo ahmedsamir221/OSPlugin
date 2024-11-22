@@ -5,6 +5,7 @@ import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.json.JSONArray;
 import org.json.JSONException;
+import android.content.Intent;
 
 public class OSPlugin extends CordovaPlugin {
 
@@ -22,6 +23,12 @@ public class OSPlugin extends CordovaPlugin {
             int num2 = args.getInt(1);
             int sum = num1 + num2;
             callbackContext.success(sum);
+            return true;
+        }
+        if ("showMap".equals(action)) {
+            Intent intent = new Intent(cordova.getActivity(), SimpleMapActivity.class);
+            cordova.getActivity().startActivity(intent);
+            callbackContext.success("Map shown!");
             return true;
         }
         return false;
