@@ -16,13 +16,13 @@
     <framework src="com.mapbox.maps:android:latest.release" />
     <config-file target="project/build.gradle" parent="allprojects/repositories">
       <repository>
-        <maven {
-                url "https://api.mapbox.com/downloads/v2/releases/maven"
-                credentials {
-                    username = "mapbox"
-                    password = "your_mapbox_access_token"
-                }
-            } />
+        <maven>
+          <url>https://api.mapbox.com/downloads/v2/releases/maven</url>
+          <credentials>
+            <username>mapbox</username>
+            <password>your_mapbox_access_token</password>
+          </credentials>
+        </maven>
       </repository>
     </config-file>
     <config-file target="AndroidManifest.xml" parent="/*">
