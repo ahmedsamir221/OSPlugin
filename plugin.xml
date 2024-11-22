@@ -13,7 +13,7 @@
     <config-file parent="/*" target="AndroidManifest.xml"/>
     <source-file src="src/android/OSPlugin.java" target-dir="src/cordova-os-plugin/OSPlugin"/>
     <!-- Add MapBox dependency -->
-    <framework src="com.mapbox.maps:android:latest.release" />
+    <framework src="com.mapbox.maps:android:10.14.1" />
     <config-file target="project/build.gradle" parent="allprojects/repositories">
       <repository>
         <maven>
