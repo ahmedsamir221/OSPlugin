@@ -1,0 +1,10 @@
+repositories {
+    // Mapbox Maven repository
+    maven {
+        url = uri("https://api.mapbox.com/downloads/v2/releases/maven")
+    }
+}
+
+dependencies {
+  implementation("com.mapbox.maps:android:11.8.0")
+}

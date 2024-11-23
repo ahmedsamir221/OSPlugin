@@ -10,28 +10,13 @@
         <param name="android-package" value="com.example.osplugin.OSPlugin"/>
       </feature>
     </config-file>
-    <config-file parent="/*" target="AndroidManifest.xml"/>
-    <source-file src="src/android/OSPlugin.java" target-dir="src/cordova-os-plugin/OSPlugin"/>
-    <!-- Add MapBox dependency -->
-    <framework src="com.mapbox.maps:android:10.14.1" />
-    <config-file target="project/build.gradle" parent="allprojects/repositories">
-      <repository>
-        <maven>
-          <url>https://api.mapbox.com/downloads/v2/releases/maven</url>
-          <credentials>
-            <username>mapbox</username>
-            <password>your_mapbox_access_token</password>
-          </credentials>
-        </maven>
-      </repository>
-    </config-file>
     <config-file target="AndroidManifest.xml" parent="/*">
-      <uses-permission android:name="android.permission.INTERNET" />
-      <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+      <!-- Include this permission to grab user's general location -->
       <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+      <!-- Include only if your app benefits from precise location access. -->
+      <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     </config-file>
-    <config-file target="AndroidManifest.xml" parent="application">
-      <activity android:name="com.example.simplemap.SimpleMapActivity" android:exported="true" />
-    </config-file>
+    <framework src="src/android/mapbox.gradle" custom="true" type="gradleReference"/>
+    <source-file src="src/android/OSPlugin.java" target-dir="src/cordova-os-plugin/OSPlugin"/>
   </platform>
 </plugin>
