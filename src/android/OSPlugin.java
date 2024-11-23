@@ -26,8 +26,6 @@ public class OSPlugin extends CordovaPlugin {
             return true;
         }
         if ("showMap".equals(action)) {
-            Intent intent = new Intent(cordova.getActivity(), SimpleMapActivity.class);
-            cordova.getActivity().startActivity(intent);
             callbackContext.success("Map shown!");
             return true;
         }
