@@ -30,7 +30,7 @@ public class OSPlugin extends CordovaPlugin {
         }
         if ("showMap".equals(action)) {
             // Create a map programmatically and set the initial camera
-            mapView = MapView(this)
+            mapView = MapView(this);
             mapView.mapboxMap.setCamera(
                 CameraOptions.Builder()
                     .center(Point.fromLngLat(-98.0, 39.5))
@@ -38,9 +38,9 @@ public class OSPlugin extends CordovaPlugin {
                     .zoom(2.0)
                     .bearing(0.0)
                     .build()
-            )
+            );
             // Add the map view to the activity (you can also add it to other views as a child)
-            setContentView(mapView)
+            setContentView(mapView);
 
             callbackContext.success("Map shown!");
             return true;
