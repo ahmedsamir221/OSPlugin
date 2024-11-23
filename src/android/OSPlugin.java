@@ -30,7 +30,7 @@ public class OSPlugin extends CordovaPlugin {
         }
         if ("showMap".equals(action)) {
             // Create a map programmatically and set the initial camera
-            mapView = MapView(this);
+            MapView mapView = MapView(this);
             mapView.mapboxMap.setCamera(
                 CameraOptions.Builder()
                     .center(Point.fromLngLat(-98.0, 39.5))
